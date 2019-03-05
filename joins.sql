@@ -91,3 +91,13 @@
 -- WHERE c.body ~'USB';
 
 -- 11.Create a query to get the post title (aliased as post_title), first name of the author of the post, last name of the author of the post, and comment body (aliased to comment_body), where the comment body contains the word 'matrix' ( should have 855 results )
+-- SELECT
+-- posts.title AS "post_title",
+-- users.first_name,
+-- users.last_name,
+-- comments.body AS "comment_body"
+-- FROM 
+-- posts
+-- INNER JOIN users ON posts.user_id = users.ID
+-- INNER JOIN comments ON posts.ID = comments.post_id
+-- WHERE comments.body ~ 'matrix';
