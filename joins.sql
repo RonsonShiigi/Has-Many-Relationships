@@ -50,10 +50,44 @@
 -- users.created_at <= '2015-01-01';
 
 -- 7.Create a query to get the all rows in the comments table, showing post title (aliased as 'Post Title'), and the all the comment's fields
-SELECT
-posts.title,
-*
-FROM
-comments
-INNER JOIN
-posts ON posts.ID = comments.post_id;
+-- SELECT
+-- posts.title AS "Post Title",
+-- *
+-- FROM
+-- comments
+-- INNER JOIN
+-- posts ON posts.ID = comments.post_id;
+
+-- 8. Create a query to get the all rows in the comments table, showing post title (aliased as post_title), post url (ailased as post_url), and the comment body (aliased as comment_body) where the post was created before January 1, 2015
+-- SELECT
+-- posts.title AS "post_title",
+-- posts.url AS "post_url",
+-- body AS "comment_body"
+-- FROM comments
+-- INNER JOIN posts ON posts.ID = comments.post_id
+-- WHERE posts.created_at <= '2015-01-01';
+
+-- 9. Create a query to get the all rows in the comments table, showing post title (aliased as post_title), post url (ailased as post_url), and the comment body (aliased as comment_body) where the post was created after January 1, 2015
+-- SELECT
+-- posts.title AS "post_title",
+-- posts.url AS "post_url",
+-- comments.body AS "comment_body",
+-- *
+-- FROM
+-- comments
+-- INNER JOIN
+-- posts ON posts.ID = comments.post_id
+-- WHERE posts.created_at >= '2015-01-01';
+
+-- 10. Create a query to get the all rows in the comments table, showing post title (aliased as post_title), post url (ailased as post_url), and the comment body (aliased as comment_body) where the comment body contains the word 'USB'
+-- SELECT
+-- c.*,
+-- posts.title AS "posts_title",
+-- posts.url AS "posts_url",
+-- c.body AS "comment_body"
+-- FROM
+-- comments AS c
+-- INNER JOIN posts ON posts.ID = c.post_id
+-- WHERE c.body ~'USB';
+
+-- 11.Create a query to get the post title (aliased as post_title), first name of the author of the post, last name of the author of the post, and comment body (aliased to comment_body), where the comment body contains the word 'matrix' ( should have 855 results )
