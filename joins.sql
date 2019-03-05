@@ -101,3 +101,16 @@
 -- INNER JOIN users ON posts.user_id = users.ID
 -- INNER JOIN comments ON posts.ID = comments.post_id
 -- WHERE comments.body ~ 'matrix';
+
+-- 12.Create a query to get the first name of the author of the comment, last name of the author of the comment, and comment body (aliased to comment_body), where the comment body contains the word 'SSL' and the post content contains the word 'dolorum' ( should have 102 results )
+-- SELECT
+-- users.first_name,
+-- users.last_name,
+-- comments.body AS "comment_body"
+-- FROM comments
+-- INNER JOIN users ON comments.user_id = users.ID
+-- INNER JOIN posts on comments.post_id = posts.ID
+-- WHERE
+-- comments.body ~ 'SSL'
+-- and
+-- posts.content ~ 'dolorum';
