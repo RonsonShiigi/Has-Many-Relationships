@@ -40,8 +40,9 @@ CREATE TABLE comments(
     body character varying(510) NULL DEFAULT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT now(),
     updated_at TIMESTAMP NOT NULL DEFAULT now(),
-    post_id INTEGER NOT NULL REFERENCES posts(ID),
-    user_id INTEGER NOT NULL REFERENCES users(ID)
+    user_id INTEGER NOT NULL REFERENCES users(ID),
+    post_id INTEGER NOT NULL REFERENCES posts(ID)
+    
     );
 
 
